@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="id">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>SisaBaik API — Chapter 5</title>
+ <style>
+ body { max-width: 70rem; margin: auto; padding: 1rem; font: 1rem/1.5 system-ui, sans-serif; color: #18332d; }
+ header, section { padding: 1rem; margin-block: 1rem; border: 1px solid #cbd8d3; border-radius: .75rem; }
+ form { display: grid; gap: .75rem; max-width: 32rem; }
+ label { font-weight: 700; }
+ input, button { padding: .7rem; font: inherit; }
+ button { border: 0; border-radius: .5rem; background: #147d64; color: white; cursor: pointer; }
+ .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+ article { padding: 1rem; background: #eef8f4; border-radius: .75rem; }
+ .error { color: #a61b1b; font-weight: 700; }
+ pre { overflow-x: auto; padding: 1rem; background: #10231f; color: #f3fbf8; border-radius: .5rem; }
+ </style>
+ <script src="app.js" defer></script>
+</head>
+<body>
+ <header>
+ <p>Chapter 5 · Backend awal</p>
+ <h1>SisaBaik API</h1>
+ <p>Halaman ini disajikan oleh Express dan mengambil data dari <code>/api/penawaran</code>.</p>
+ </header>
+ <main>
+ <section aria-labelledby="judul-katalog">
+ <h2 id="judul-katalog">Penawaran tersedia</h2>
+ <p id="status" role="status" aria-live="polite">Memuat data…</p>
+ <div id="katalog" class="grid"></div>
+ </section>
+ <section aria-labelledby="judul-pesanan">
+ <h2 id="judul-pesanan">Uji pembuatan pesanan</h2>
+ <form id="form-pesanan">
+ <label for="nama">Nama pemesan</label>
+ <input id="nama" name="namaPemesan" minlength="3" required>
+ <label for="penawaran">ID
+    <input id="penawaran" name="penawaranId" type="number" min="1" required>
+ <label for="kuantitas">Kuantitas</label>
+ <input id="kuantitas" name="kuantitas" type="number" min="1" required>
+ <button type="submit">Kirim pesanan</button>
+ </form>
+ <p id="status-pesanan" role="status" aria-live="polite"></p>
+ <pre id="hasil-pesanan">Belum ada respons.</pre>
+ </section>
+ </main>
+</body>
+</html>
